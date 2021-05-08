@@ -1,0 +1,41 @@
+#+Title: Booklet for Compline according to the /Usus Antiquior/
+
+* Rationale
+
+There are quite a few resources for singing and saying compline
+according to the old breviary available, notably the very complete
+booklet [[https://github.com/veromary/roman-compline][here]].  My objection to everything I’ve found---and this
+applies to most ‘new’ latin complines as well---is that they are
+excessively large.  Compline is supposed to be /simple/ and simplicity
+in the liturgical materials used certainly goes a long way to ensuring
+that.
+
+This booklet is designed to be used from one end to another.  No
+flipping back-and-forth between ordinarium, psalterium, proprium de
+tempore, etc.  If compline can be incredibly easy to print and pray in
+my [[https://boutique.barroux.org/liturgie-romaine/1670-diurnale-romanum-format-poche-9782000006534.html][diurnal]] I don’t see why it should be any harder here.
+
+With this in mind as little score as possible is provided.  If you
+don’t know the chants the first time you pray it, you will the
+sixteenth, and you’ll not look at the page the sixtieth.  Equally,
+there is /no/ liturgical reason whatsoever that every intoned text
+should be chanted precisely as printed in the /Liber/ or the
+/Antiphonale/.  Go and sing at an Orthodox Liturgy: most of the time
+they have nothing but the text and the number of the tone written
+above.  On the other hand, there is no reason to have an appendix
+listing the tones: they might as well be printed directly after the
+antiphon, the second half being replaced by the  ‘u e o u a e’
+(‘saecUlOrUm AmEn’).  I had far rather abandon a traditional shorthand
+than flip around a book whilst trying to pray.
+
+* Form
+
+This booklet is designed to printed A5 and spiral-bound.  It can
+alternatively be printed A4, which yields a fairly decent chant-stand
+book.  Texts to be declaimed or sung are printed double-column for
+ease of reading in both forms.
+
+* Sources
+
+I’ve made use of the above-linked repository, [[http://www.divinumofficium.com][divinumofficium.com]] and
+the invaluable [[https://gregobase.selapa.net][https://gregobase.selapa.net]].

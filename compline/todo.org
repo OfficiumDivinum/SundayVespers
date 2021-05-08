@@ -1,0 +1,25 @@
+* DONE [100%] Add tones to end of antiphons
+- [X] sun 1
+- [X] sun 2
+- [X] sun 3
+- [X] mon 1
+- [X] mon 2
+- [X] mon 3
+- [X] tue 1
+- [X] tue 2
+- [X] tue 3
+- [X] wed 1
+- [X] wed 2
+- [X] wed 3
+- [X] thu 1
+- [X] thu 2
+- [X] thu 3
+- [X] fri 1
+- [X] fri 2
+- [X] fri 3
+- [X] sat 1
+- [X] sat 2
+- [X] sat 3
+
+
+* TODO Versewidths

@@ -1,0 +1,30 @@
+on:
+  push:
+    # Sequence of patterns matched against refs/tags
+  pull_request:
+  workflow_dispatch:
+
+name: Build and upload artifact
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up git repo
+        uses: actions/checkout@v2
+
+      - name: Install packages
+        run: |
+          sudo apt install texlive texlive-metapost texlive-lang-english texlive-lang-european texlive-latex-extra texlive-luatex gregorio latexmk
+          
+      - name: Latex
+        run: |
+          sh .git-hook
+          cd compline
+          env openout_any=a latexmk --shell-escape --pdflatex=lualatex --pdf compline.tex
+          cd ../
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: compline.pdf
+          path: compline/compline.pdf
