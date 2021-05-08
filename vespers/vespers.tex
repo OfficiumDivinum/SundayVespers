@@ -179,7 +179,13 @@
 \label{sec:incipit}
 Pater. Ave.
 
-\gregorioscore{incipit}
+\red{Tonus Communis:}
+
+\gregorioscore{../common/deusinadiutorium_simple.gabc}
+
+\red{Tonus Sollemnis:}
+
+\gregorioscore{../common/deusinadiutorium_solemn.gabc}
 
 \section{Psalmi}
 \gregorioscore{ant1}
@@ -195,11 +201,13 @@ Pater. Ave.
 \threecolumntranslation{
   \translationOne
 }
-\gregorioscore{ant1}
+\ifdefempty{\anttwotranslation}{}{%
+  \gregorioscore{ant1}
 
 
-\gregorioscore{ant2}
-\onecolumntranslation{\anttwotranslation}
+  \gregorioscore{ant2}
+  \onecolumntranslation{\anttwotranslation}
+}
 
 \begin{minipage}{1.0\linewidth}
   \gregorioscore{psalm2}
@@ -211,10 +219,12 @@ Pater. Ave.
 \threecolumntranslation{
   \translationTwo
 }
-\gregorioscore{ant2}
+\ifdefempty{\anttwotranslation}{}{%
+  \gregorioscore{ant2}
 
-\gregorioscore{ant3}
-\onecolumntranslation{\antthreetranslation}
+  \gregorioscore{ant3}
+  \onecolumntranslation{\antthreetranslation}
+}
 
 \begin{minipage}{1.0\linewidth}
   \gregorioscore{psalm3}
@@ -224,10 +234,12 @@ Pater. Ave.
   \psalmThree
 \end{verse}
 \threecolumntranslation{\translationThree}
-\gregorioscore{ant3}
+\ifdefempty{antthreetranslation}{}{%
+  \gregorioscore{ant3}
 
-\gregorioscore{ant4}
-\onecolumntranslation{\antfourtranslation}
+  \gregorioscore{ant4}
+  \onecolumntranslation{\antfourtranslation}
+}
 
 \begin{minipage}{1.0\linewidth}
   \gregorioscore{psalm4}
@@ -237,13 +249,15 @@ Pater. Ave.
   \psalmFour
 \end{verse}
 \threecolumntranslation{\translationFour}
-\gregorioscore{ant4}
+\ifdefempty{\anttwotranslation}{}{%
+  \gregorioscore{ant4}
 
-\gregorioscore{ant5}
-\onecolumntranslation{\antfivetranslation}
+  \gregorioscore{ant5}
+  \onecolumntranslation{\antfivetranslation}
+}
 
 \begin{minipage}{1.0\linewidth}
-  \gregorioscore{psalm5} 
+  \gregorioscore{psalm5}
 \end{minipage}
 
 \begin{verse}
@@ -251,8 +265,11 @@ Pater. Ave.
 \end{verse}
 \nopagebreak
 \threecolumntranslation{\translationFive}
-
-\gregorioscore{ant5}
+\ifdefempty{\anttwotranslation}{%
+  \gregorioscore{\ant1}
+}{%
+  \gregorioscore{ant5}
+}
 
 \section{Capitulum}
 
