@@ -1,4 +1,4 @@
 .PHONY: all
 
 all:
-	make -C compline
+	make -C vespers

@@ -1,7 +1,7 @@
-compline.pdf: compline.tex
-	lualatex --shell-escape compline.tex
-	lualatex --shell-escape compline.tex
+vespers.pdf: vespers.tex
+	lualatex --shell-escape vespers.tex
+	lualatex --shell-escape vespers.tex
 
 .PHONY: all
 
-all: compline.pdf
+all: vespers.pdf
