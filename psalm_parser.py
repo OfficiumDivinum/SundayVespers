@@ -8,12 +8,15 @@ Last two verses are Gloria.
 """
 
 import argparse
+from pathlib import Path
 
 parser = argparse.ArgumentParser()
 parser.add_argument("PATH", help="File to read in.")
-parser.add_argument("-n", help="psalm number to output")
+parser.add_argument("OUTDIR", help="outdir")
+parser.add_argument("N", help="psalm number to output")
 parser.add_argument("--range", help="Range to print")
 parser.add_argument("-g", "--gloria", help="Print Gloria?", action="store_true")
+parser.add_argument("-c", "--copy", action="store_true", help="Copy .gabc to approprately named file")
 args = parser.parse_args()
 
 nos = [
@@ -31,8 +34,10 @@ nos = [
 ]
 
 verses = {}
+inf = Path(args.PATH).expanduser()
+outd = Path(args.OUTDIR).expanduser()
 
-with open(args.PATH, "r") as f:
+with inf.open() as f:
     for line in f:
         if line.startswith("{"):
             no, vpart = line.split("}", 1)
@@ -58,15 +63,21 @@ if not args.range:
 else:
     start, stop = args.RANGE.split("-")
 
-if args.n:
-    print(f"\\newcommand{{\\psalm{nos[int(args.n)]}}}{{")
+with (outd / "psalms.tex").open("a") as f:
 
-for i in range(int(start), int(stop) + 1):
-    print(verses[i])
+    f.write(f"\\newcommand{{\\psalm{nos[int(args.N)]}}}{{\n")
 
-if args.gloria:
-    for i in list(verses.keys())[-2:]:
-        print(verses[i])
+    for i in range(int(start), int(stop) + 1):
+        f.write(verses[i] + "\n")
 
-if args.n:
-    print("}\n\n")
+    if args.gloria:
+        for i in list(verses.keys())[-2:]:
+            f.write(verses[i] + "\n")
+
+    f.write("}\n\n")
+
+if args.copy:
+    outf = outd / f"psalm{args.N}.gabc"
+    with outf.open("w") as f:
+        with inf.with_suffix(".gabc").open() as g:
+            f.write(g.read())
