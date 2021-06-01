@@ -1,4 +1,5 @@
-# Getting the booklets
+# Usage
+## Getting the booklets
 
 All booklets are available as
 [releases](https://github.com/OfficiumDivinum/SundayVespers/releases) allowing
@@ -7,7 +8,7 @@ older pagination, you probably just want the latest).  The remainder of this
 documentation is for people who want to *edit* the booklets, or make new
 booklets.
 
-# Technical Description
+## Technical Description
 
 This repository is not fully automated.  (A fully automated solution for
 producing booklets to sing *any* office is planned as part of the broader
@@ -28,7 +29,7 @@ output is consistent.
     packages including TexLive, which takes forever. As time permits I intend to
     use a custom build image.
     
-# Modifying the typography
+## Modifying the typography
 
 To change the layout, edit `vespers.tex`.  It is a very standard LaTeX file
 using `memoir`, so modification should be easy.  I have deliberately not tried
@@ -40,7 +41,7 @@ replace `vespers.tex` in every single directory.  Please do not be tempted to
 symlink: it is important to be able to intervene manually as required.  TeX is
 designed to *help* human typesetters, not to *replace* them.
 
-# Modifying an extant booklet
+## Modifying an extant booklet
 
 If you have spotted a mistake in a booklet, or just want to change something in
 the *content*, edit `propers.tex` (or `psalms.tex`).  These files provide the
@@ -51,9 +52,9 @@ If you have only a small change, the easiest way is to find the file in
 question in github's web interface, click the pencil icon to edit the file, edit
 as required, and then enter a short description of the change and commit.
 
-# Creating a new booklet
+## Creating a new booklet
 
-## With Cookiecutter (preferred)
+### With Cookiecutter (preferred)
 
 Install [cookiecutter](https://github.com/cookiecutter/cookiecutter) if you do
 not already have it.
@@ -65,12 +66,12 @@ cookiecutter vespers-template
 And enter a name for the feast.  This will create a directory with a sensible
 name and populate it with the correct files.
 
-## Manually
+### Manually
 
 Copy `vespers-template/{{cookiecutter.project_slug}}` to a sensibly named
 directory.  Insert the feast name in `propers.tex`.
 
-# Adding Content
+## Adding Content
 
 1. Begin by collecting all the antiphons, and saving the `.gabc` files as
    `antN.gabc` (e.g. `ant1.gabc`).  Most everything gregorian can be found at
