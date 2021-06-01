@@ -1,20 +1,7 @@
-#+Title: Compline with the vulgate psalter, largely according to the 1962 rubrics
+#+Title: Sunday Vespers, as used at St. Joseph's, Gateshead
 
-Compline for singing.  I have, rather naughtily, used the ancient
-form of the hymn (which the Benedictines preserve), and drawn some
-proper melodies from the Bendectine /antiphonale monasticum/.
+This repository holds vespers booklets suitable for congregation and choir,
+according to the sadly limited rubrics of the 1962 books (i.e. antiphons are not
+doubled).
 
-If you would like this in any other format (or you have found an
-error), please open an issue.
-
-Needless to say, files in this folder are in Latin.  I may get round
-to adding translations at some point.
-
-Looking for the pdf?  Click on the latest release, to the right.  Pdfs
-are built with github actions.
-
-(The slightly over-the-top layout in this repository is for historic
-reasons, but it should make it easier to add e.g. vespers if you
-wished to.  I have another project afoot to make generating booklets
-for the office an automatic process: I’ll add back here when that is
-ready.)
+This repository is semi-automated.  For more information see the documentation.
