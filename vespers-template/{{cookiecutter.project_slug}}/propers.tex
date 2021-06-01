@@ -1,0 +1,93 @@
+% This file defines the propert to be inserted into vespers.tex  In this way
+% multiple feasts can be typeset very quickly.  vespers.tex should not normally
+% need changing.  Note that this is not the most readable way to insert text
+% into a LaTeX document, but it is the most powerful: the macros defined here
+% are directly excecuted when building the document.
+
+% For the title page
+\newcommand{\feast}{ {{-cookiecutter.feast_name-}} }
+
+% Translations of antiphons
+\newcommand{\antonetranslation}{} 
+\newcommand{\anttwotranslation}{} % set to blank to use ant1 throughout
+
+% Define these if required.  They will be ignored if anttwotranslation is blank.
+% \newcommand{\antthreetranslation}{}
+% \newcommand{\antfourtranslation}{}
+% \newcommand{\antfivetranslation}{}
+
+
+% Text of psalms, formatted. This can be taken directly from the formatted
+% psalms provided. Alternatively you can use parsing script to generate a
+% psalms.tex and include it here. For more information, see the documentation.
+\input{psalms.tex}
+
+% \newcommand{\psalmOne}
+% \newcommand{\psalmTwo}
+% \newcommand{\psalmThree}
+% \newcommand{\psalmFour}
+% \newcommand{\psalmFive}
+
+
+\newcommand{\translationOne}{}
+
+\newcommand{\translationTwo}{}
+
+\newcommand{\translationThree}{}
+
+\newcommand{\translationFour}{}
+
+\newcommand{\translationFive}{}
+
+% The Chapter will be inserted directly in a multicol environment, so we just
+% provide the latin (\l{}) and english (\e{})
+\newcommand{\capitulum}{
+  \l{}
+  \e{}
+}
+
+% Hymn
+\newcommand{\hymntranslation}{
+  translations\\
+  look\\
+  like\\
+  this
+
+  verse\\
+  like\\
+  this\\
+  this.
+  Amen.}
+
+\newcommand{\versus}{
+  \l{\v~}
+  \e{\v~}
+  \l{\r~}
+  \e{\r~}
+}
+
+% Magnificat Antiphon
+\newcommand{\magnificatAntiphonTranslation}{}
+
+% Collect
+\newcommand{\oratio}{
+  \l{}
+  \e{}
+  \l{Per Dóminum nostrum Iesum Christum, Fílium tuum: qui tecum vivit
+    et regnat in unitáte Spíritus Sancti Deus, per ómnia sǽcula
+    sæculórum.}
+  \e{Through Jesus Christ, thy Son our Lord, Who liveth
+    and reigneth with thee, in the unity of the Holy Ghost, ever one
+    God, world without end.}
+  \amen
+}
+
+% Commemorations if any.  If empty this will be skipped.  It should contain *all
+% the text* of the commemorations, including responses.
+\newcommand{\com}{}             %no commemoratio
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "vespers"
+%%% End:

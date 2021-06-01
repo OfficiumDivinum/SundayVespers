@@ -1,0 +1,339 @@
+\documentclass[a5paper,openany,10pt]{memoir}
+% Packages
+\usepackage{fontspec}
+\setmainfont{TeX Gyre Pagella} %palatino clone
+\usepackage[yyyymmdd,hhmmss]{datetime}
+% \usepackage{microtype}
+\usepackage{etoolbox}
+\usepackage{lettrine}
+\usepackage[british, latin]{babel}
+\usepackage{paracol}
+\usepackage{ifthen}
+\usepackage{scalerel}
+\usepackage{verse,anyfontsize}
+\usepackage{stackengine}
+\usepackage[hidelinks=true, final]{hyperref}
+\usepackage{multicol}
+\usepackage{afterpage}
+\usepackage[]{gitinfo2}
+% local
+\usepackage{rubrics}
+\usepackage{styling}
+% Config
+\pagestyle{plain}
+\thispagestyle{empty}
+% =========
+% layout
+\setulmarginsandblock{0.5in}{0.7in}{*}
+\setlrmarginsandblock{0.5in}{0.5in}{*}
+\checkandfixthelayout
+% headers
+\setsecnumdepth{chapter}
+\setsecheadstyle{\LARGE\raggedright\centering}
+\setsubsecheadstyle{\Large\scshape\raggedright\centering}
+\setsubsubsecheadstyle{\color{red}\large\scshape\raggedright\centering}
+\setparaheadstyle{\color{red}\large\raggedright\centering}
+\setafterparaskip{1.5ex plus .2ex}
+% multicols
+\renewcommand{\columnseprulecolor}{\color{red}}
+\setlength{\multicolsep}{0em}
+\setlength{\columnseprule}{0.4pt}
+\colseprulecolor{red}
+% page
+\openany
+\input{propers}
+
+\makeatletter
+\newcommand{\oneraggedpage}{\let\mytextbottom\@textbottom
+  \let\mytexttop\@texttop
+  \raggedbottom
+  \afterpage{%
+    \global\let\@textbottom\mytextbottom
+    \global\let\@texttop\mytexttop}}
+\makeatother
+\renewcommand{\X}{\textcolor{red}{\grecross}}
+\renewcommand{\r}{\textcolor{red}{\gothRbar.}}
+\renewcommand{\v}{\textcolor{red}{\gothVbar.}}
+
+% \renewcommand{\red}[2][\centering]{%do the red....
+%   % call with empty optional argument for justified text; or
+%   % \raggedright.]
+%   % \filbreak
+% {\textcolor{red}{\noindent#2}#1}\par\nopagebreak\medskip\nopagebreak}
+
+
+\newcommand{\ps}[2][]{%typeset `psalmus'
+  \paragraph{Psalmus #2#1}}
+
+
+% \medskip\nopagebreak
+% {\textcolor{red}{\noindent Psalmus #2#1}\centering\par\nopagebreak\vspace{-0.5\baselineskip}\nopagebreak} }
+
+
+\newcommand{\dropcap}[2]{%
+  \lettrine{\textcolor{red}{#1}}{#2}}
+
+\renewcommand{\red}[2][\centering]{%do the red....
+  % call with empty optional argument for justified text; or
+  % \raggedright.]
+  % \filbreak
+  {\noindent\textcolor{red}{\itshape#2}#1\par\nopagebreak\medskip\nopagebreak}\nopagebreak}
+
+
+\newcommand{\black}[2][0.5]{%say the black...
+  \columnratio{#1}
+  \begin{paracol}{2}
+    \setlength{\parindent}{0em}
+    \setlength{\parskip}{0.2\baselineskip}
+    #2
+  \end{paracol}
+  \medskip
+}
+
+\renewcommand{\X}{\textcolor{red}{\grecross}}
+
+\renewcommand{\l}[2][]{\selectlanguage{latin}
+  \ifthenelse{\equal{s}{#1}}%
+  {\emph{S.}~}%
+  {}%
+  \ifthenelse{\equal{m}{#1}}%
+  {\emph{M.}~}%
+  {}%
+  #2\par\selectlanguage{british}\switchcolumn}
+\newcommand{\e}[2][]{%
+  \ifthenelse{\equal{s}{#1}}%
+  {\emph{P.}~}%
+  {}%
+  \ifthenelse{\equal{m}{#1}}%
+  {\emph{S.}~}%
+  {}%
+  #2\par\switchcolumn*}
+\renewcommand{\S}{\emph{S.}~}
+\newcommand{\M}{\emph{M.}~}
+\newcommand{\amen}{\l{Amen.}\e{Amen.}}
+\newcommand{\dominusvobiscum}{%
+  \l[s]{Dóminus vobíscum.}
+  \e[s]{The Lord be with you.}
+  \l[m]{Et cum spíritu tuo.}
+  \e[m]{And with thy spirit.}}
+\newcommand{\oremus}{
+  \l{Orémus.}
+  \e{Let us pray.}
+}
+\newcommand{\domineexaudi}{
+  \l{\v~Dómine, exáudi oratiónem meam.}
+  \e{\v~O Lord, hear my prayer.}
+  \l{\r~Et clamor meus ad te véniat.}
+  \e{\r~And let my cry come unto thee.}
+}
+\newcommand{\deogratias}{
+  \l{\r~Deo grátias.}
+  \e{\r~Thanks be to God.}
+}
+\newcommand{\onecolumntranslation}[1]{%
+  {\small #1}}
+
+\newcommand{\threecolumntranslation}[1]{%
+  \begin{multicols}{3}
+    \small
+    #1
+  \end{multicols}}
+
+
+% modified from https://tex.stackexchange.com/questions/163334/using-lettrine-or-equivalent-inside-verse-environment
+
+\def\startverse#1\\#2\\{%
+  \begin{minipage}{4in}%
+    \firstline#1\relax%
+    \def\verselineB{#2}%
+    \if Q\versalletter\def\descstrut{\strut}\else\def\descstrut{}\fi%
+    \def\Versal{\textcolor{red}{%
+        \scalerel*{$\fontsize{28}{30}\selectfont\versalletter$}%
+        {\def\stacktype{L}\stackon{T\descstrut}{T}}}}%
+    \setbox0=\hbox{\Versal\,}%
+    \def\leftoffset{-.5\wd0}%
+    \hspace*{\wd0}\hspace{\leftoffset}%
+    \verselineA\\%
+    \hspace*{\wd0}\hspace{\leftoffset}%
+    \llap{\smash{\box0}}%
+    \hspace{0.5em}\verselineB\strut%
+  \end{minipage}\\%
+}
+
+
+\def\firstline#1#2 #3\relax{\def\versalletter{#1}\def\verselineA{\textsc{#2} #3}}
+
+\begin{document}
+\selectlanguage{latin}
+\midsloppy
+
+\setlength{\parskip}{\medskipamount}
+\setlength{\parindent}{0em}
+
+% title page
+\TitlePage{Divinum Officium}{Ad Vesperas}{\feast}
+
+% \renewcommand{\gregorioscore}[1]{}
+
+\section{Incipit}
+\label{sec:incipit}
+Pater. Ave.
+
+\red{Tonus Communis:}
+
+\gregorioscore{../common/deusinadiutorium_simple.gabc}
+
+\red{Tonus Sollemnis:}
+
+\gregorioscore{../common/deusinadiutorium_solemn.gabc}
+
+\section{Psalmi}
+\gregorioscore{ant1}
+\onecolumntranslation{\antonetranslation}
+
+\begin{minipage}{1.0\linewidth}
+  \gregorioscore{psalm1}
+\end{minipage}
+
+\begin{verse}
+  \psalmOne
+\end{verse}
+\threecolumntranslation{
+  \translationOne
+}
+\ifdefempty{\anttwotranslation}{}{%
+  \gregorioscore{ant1}
+
+
+  \gregorioscore{ant2}
+  \onecolumntranslation{\anttwotranslation}
+}
+
+\begin{minipage}{1.0\linewidth}
+  \gregorioscore{psalm2}
+\end{minipage}
+
+\begin{verse}
+  \psalmTwo
+\end{verse}
+\threecolumntranslation{
+  \translationTwo
+}
+\ifdefempty{\anttwotranslation}{}{%
+  \gregorioscore{ant2}
+
+  \gregorioscore{ant3}
+  \onecolumntranslation{\antthreetranslation}
+}
+
+\begin{minipage}{1.0\linewidth}
+  \gregorioscore{psalm3}
+\end{minipage}
+
+\begin{verse}
+  \psalmThree
+\end{verse}
+\threecolumntranslation{\translationThree}
+\ifdefempty{antthreetranslation}{}{%
+  \gregorioscore{ant3}
+
+  \gregorioscore{ant4}
+  \onecolumntranslation{\antfourtranslation}
+}
+
+\begin{minipage}{1.0\linewidth}
+  \gregorioscore{psalm4}
+\end{minipage}
+
+\begin{verse}
+  \psalmFour
+\end{verse}
+\threecolumntranslation{\translationFour}
+\ifdefempty{\anttwotranslation}{}{%
+  \gregorioscore{ant4}
+
+  \gregorioscore{ant5}
+  \onecolumntranslation{\antfivetranslation}
+}
+
+\begin{minipage}{1.0\linewidth}
+  \gregorioscore{psalm5}
+\end{minipage}
+
+\begin{verse}
+  \psalmFive
+\end{verse}
+\nopagebreak
+\threecolumntranslation{\translationFive}
+\ifdefempty{\anttwotranslation}{%
+  \gregorioscore{\ant1}
+}{%
+  \gregorioscore{ant5}
+}
+
+\section{Capitulum}
+
+\black{
+  \capitulum
+  \deogratias
+}
+
+\section{Hymnus}
+\gregorioscore{hymn}
+\threecolumntranslation{\hymntranslation}
+
+\section{Versus}
+\black{
+  \versus
+}
+
+\section{Canticum}
+\gregorioscore{mag-ant}
+\onecolumntranslation{\magnificatAntiphonTranslation}
+\gregorioscore{magnificat}
+\gregorioscore{mag-ant}
+
+\section{Oratio}
+
+\black{
+  \domineexaudi
+  \oremus
+  \oratio
+}
+
+% Print commemoration only if \com is defined
+\ifdefempty{\com}{}\com
+
+\section{Conclusio}
+
+\black{
+  \domineexaudi
+  \l{\v~Benedicámus Dómino.}
+  \e{\v~Let us bless the Lord.}
+  \deogratias
+  \l{\v~Fidélium ánimæ per misericórdiam Dei requiéscant in pace.}
+  \e{\v~May the souls of the faithful departed, through the mercy of
+    God, rest in peace.}
+  \l{\r~Amen.}
+  \e{\r~Amen.}
+}
+
+Pater.
+
+\begin{center}
+  \+
+\end{center}
+
+
+\vfill
+Typeset by John Morris in ten-point Palatino.  Translations from the
+Knox Bible and divinumofficium.com.
+
+{\centering\footnotesize\texttt{Compositum \today\ hora \currenttime}}
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-engine: lualatex-shell
+%%% End:
