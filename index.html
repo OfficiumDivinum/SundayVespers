@@ -415,13 +415,10 @@ for the propers <code>propers.tex</code> and, optionally, a file containing the 
 (<code>psalms.tex</code>), and a makefile which handles building the booklet.</p>
 <p>No output files are committed to version control.  Rather, on every push to
 master (which includes every pull request) the entire repository is rebuilt with
-Github Actions[^1].  If the push is <em>tagged</em>, a release is created with all the
+Github Actions<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>.  If the push is <em>tagged</em>, a release is created with all the
 pdfs attached; if not they are available as run artefacts from the 'Actions' tab
 on github. In this way one does not need texlive/gregorio installed locally, and
 output is consistent.</p>
-<p>[^1]: Currently this is rather slow, as it manually installs all the required
-    packages including TexLive, which takes forever. As time permits I intend to
-    use a custom build image.</p>
 <h2 id="modifying-the-typography">Modifying the typography</h2>
 <p>To change the layout, edit <code>vespers.tex</code>.  It is a very standard LaTeX file
 using <code>memoir</code>, so modification should be easy.  I have deliberately not tried
@@ -491,6 +488,16 @@ variant of the psalm tone to use for the piece.</p>
    merge it.</p>
 </li>
 </ol>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Currently this is rather slow, as it manually installs all the required
+packages including TexLive, which takes forever. As time permits I intend to
+use a custom build image.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
                 
               
               
