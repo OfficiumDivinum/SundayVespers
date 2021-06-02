@@ -1,6 +1,7 @@
 {
   "feast_name": "",
   "project_slug": "{{ cookiecutter.feast_name | slugify }}",
+  "solemn_introit": "yN",
     "_extensions": ["cookiecutter.extensions.SlugifyExtension"],
-    "_copy_without_render": ["vespers.tex", "*.sty"]
+    "_copy_without_render": ["*.sty"]
 }
