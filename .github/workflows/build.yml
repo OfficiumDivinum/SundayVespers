@@ -34,5 +34,5 @@ jobs:
         run: ./package.py
       - uses: actions/upload-artifact@v2
         with:
-          name: pdfs.zip
-          path: pdfs.zip
+          name: Pdfs
+          path: pdfs/*

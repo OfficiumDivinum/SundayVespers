@@ -2,8 +2,9 @@
 from pathlib import Path
 from zipfile import ZipFile
 
-with ZipFile("pdfs.zip", "w") as zipf:
-    for pdf in Path("vespers/").glob("**/*.pdf"):
-        zipf.write(pdf, arcname=f"{pdf.parent.name}.pdf")
-print(list(Path(".").glob("*")))
-print(Path(".").resolve())
+Path("./pdfs").mkdir()
+
+for pdf in Path("vespers/").glob("**/*.pdf"):
+    with Path(f"./pdfs/{pdf.parent.name}.pdf").open("wb") as f:
+        with pdf.open("rb") as g:
+            f.write(g.read())
