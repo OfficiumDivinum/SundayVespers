@@ -54,6 +54,10 @@ elif match := search("(.+)-ant", antiphon.stem):
 else:
     raise Exception("Unable to determine logical name")
 
+try:
+    int(args.PSALM_NAME)
+except ValueError:
+    args.PSALM_NAME = args.PSALM_NAME.title()
 
 verses = {}
 if termination:
