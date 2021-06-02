@@ -25,9 +25,9 @@ pdfs attached; if not they are available as run artefacts from the 'Actions' tab
 on github. In this way one does not need texlive/gregorio installed locally, and
 output is consistent.
 
-[^1]: Currently this is rather slow, as it manually installs all the required
-    packages including TexLive, which takes forever. As time permits I intend to
-    use a custom build image.
+[^1]: We use the excellent texlive docker image maintained by [Xu
+    Cheng](https://github.com/xu-cheng/texlive-action). TexLive now has a recent
+    gregorio in it.
     
 ## Modifying the typography
 
