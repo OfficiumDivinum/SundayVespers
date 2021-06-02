@@ -57,9 +57,9 @@ else:
 
 verses = {}
 if termination:
-    inf = Path(f"../psalms/{args.PSALM_NAME}-{mode}{termination}.tex")
+    inf = Path(f"../../psalms/{args.PSALM_NAME}-{mode}{termination}.tex")
 else:
-    inf = Path(f"../psalms/{args.PSALM_NAME}-{mode}.tex")
+    inf = Path(f"../../psalms/{args.PSALM_NAME}-{mode}.tex")
 
 outd = Path(".")
 
