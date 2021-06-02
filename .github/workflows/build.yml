@@ -28,3 +28,13 @@ jobs:
         with:
           name: compline.pdf
           path: compline/compline.pdf
+ build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: xu-cheng/texlive-action/full@v1
+        with:
+          run: |
+            sh .git-hook
+            apk add make
+            make
