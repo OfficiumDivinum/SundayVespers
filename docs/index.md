@@ -60,7 +60,7 @@ Install [cookiecutter](https://github.com/cookiecutter/cookiecutter) if you do
 not already have it.
 
 ```bash
-cookiecutter vespers-template
+cookiecutter vespers-template -o vespers/
 ```
 
 And enter a name for the feast.  This will create a directory with a sensible
