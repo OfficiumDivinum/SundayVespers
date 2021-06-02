@@ -1,4 +1,4 @@
-#!/usr/bi/python3
+#!/usr/bin/python3
 from pathlib import Path
 from zipfile import ZipFile
 
