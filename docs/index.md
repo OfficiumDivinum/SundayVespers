@@ -84,7 +84,7 @@ directory.  Insert the feast name in `propers.tex`.
    > The mode or tone differentia of the piece. Typically, this expresses the
    > variant of the psalm tone to use for the piece.
    
-3. Run `../psalm_parser.py --copy antN.gabc PSALM_NAME` for every antiphon. This
+3. Run `../psalm_parser.py antN.gabc PSALM_NAME` for every antiphon. This
    will parse the antiphon file, find the right psalm in the relevant mode,
    format it correctly and drop the resulting .gabc file in the current
    directory with the correct name.  `PSALM_NAME` is the name of the psalm as in

@@ -15,3 +15,6 @@ theme:
           toggle:
             icon: material/toggle-switch
             name: Switch to light mode
+
+markdown_extensions:
+  - footnotes
