@@ -17,7 +17,7 @@ jobs:
       - run: pip install --upgrade pip && pip install mkdocs mkdocs-gen-files
       - run: git config user.name 'github-actions[bot]' && git config user.email 'github-actions[bot]@users.noreply.github.com'
       - name: Publish docs
-        run: mkdocs gh-deploy   steps:
+        run: mkdocs gh-deploy
 
   build_latex:
     runs-on: ubuntu-latest
