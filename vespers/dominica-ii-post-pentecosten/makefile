@@ -1,6 +1,5 @@
 vespers.pdf: vespers.tex
-	lualatex --shell-escape vespers.tex
-	lualatex --shell-escape vespers.tex
+	env openout_any=a latexmk --shell-escape --pdflatex=lualatex --pdf vespers.tex
 
 .PHONY: all
 
