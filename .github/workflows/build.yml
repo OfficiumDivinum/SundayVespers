@@ -30,6 +30,8 @@ jobs:
             sh .git-hook
             apk add make
             make
+      - name: make zip
+        run: ./publish.py
       - uses: actions/upload-artifact@v2
         with:
           name: pdfs.zip
