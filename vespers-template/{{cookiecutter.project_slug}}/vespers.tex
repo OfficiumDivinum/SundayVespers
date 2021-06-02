@@ -13,7 +13,7 @@
 \usepackage{scalerel}
 \usepackage{verse,anyfontsize}
 \usepackage{stackengine}
-\usepackage[hidelinks=true, final]{hyperref}
+\usepackage[hidelinks, final]{hyperref}
 \usepackage{multicol}
 \usepackage{afterpage}
 \usepackage[]{gitinfo2}
@@ -235,7 +235,7 @@ Pater. Ave.
   \psalmThree
 \end{verse}
 \threecolumntranslation{\translationThree}
-\ifdefempty{antthreetranslation}{}{%
+\ifdefempty{\anttwotranslation}{}{%
   \gregorioscore{ant3}
 
   \gregorioscore{ant4}
@@ -267,7 +267,7 @@ Pater. Ave.
 \nopagebreak
 \threecolumntranslation{\translationFive}
 \ifdefempty{\anttwotranslation}{%
-  \gregorioscore{\ant1}
+  \gregorioscore{ant1}
 }{%
   \gregorioscore{ant5}
 }
@@ -291,7 +291,13 @@ Pater. Ave.
 \section{Canticum}
 \gregorioscore{magnificat-ant}
 \onecolumntranslation{\magnificatAntiphonTranslation}
-\gregorioscore{magnificat}
+\begin{minipage}{1.0\linewidth}
+  \gregorioscore{magnificat}
+\end{minipage}
+
+\begin{verse}
+  \magnificat
+\end{verse}
 \gregorioscore{magnificat-ant}
 
 \section{Oratio}
