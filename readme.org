@@ -4,4 +4,4 @@ This repository holds vespers booklets suitable for congregation and choir,
 according to the sadly limited rubrics of the 1962 books (i.e. antiphons are not
 doubled).
 
-This repository is semi-automated.  For more information see the [[https://OfficiumDivinum.github.io/SundayVespers][documentation]].
+This repository is semi-automated.  For more information see the [[https://st-josephs-gateshead.github.io/SundayVespers][documentation]].
