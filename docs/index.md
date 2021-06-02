@@ -2,7 +2,7 @@
 ## Getting the booklets
 
 All booklets are available as
-[releases](https://github.com/OfficiumDivinum/SundayVespers/releases) allowing
+[releases](https://github.com/St-Josephs-Gateshead/SundayVespers/releases) allowing
 you to select the desired version (hint: unless you need conformity with an
 older pagination, you probably just want the latest).  The remainder of this
 documentation is for people who want to *edit* the booklets, or make new
@@ -11,7 +11,7 @@ booklets.
 ## Technical Description
 
 This repository is not fully automated.  (A fully automated solution for
-producing booklets to sing *any* office is planned as part of the broader
+producing booklets to sing *any* office is planned as part of the 
 [OfficiumDivinum](https://github.com/OfficiumDivinum) project.)  Instead it aims
 to make producing booklets by hand as little tedious as possible.  Every booklet
 is in a self-contained directory, with a main latex file (`vespers.tex`), a file
