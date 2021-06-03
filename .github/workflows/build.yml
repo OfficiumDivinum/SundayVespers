@@ -40,3 +40,4 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           files: pdfs/*.pdf
+          tag: latest
