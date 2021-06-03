@@ -9,7 +9,22 @@ Last two verses are Gloria.
 import argparse
 import warnings
 from pathlib import Path
-from re import search
+from re import search, sub
+from collections import namedtuple
+from jinja2 import Template
+
+Line = namedtuple("Line", ["flex", "start", "end"])
+
+indented_line_template = Template(
+    "{% if flex %}\\vin {{flex}}~+\\\\\n{%endif%}\\vin {{start}}~\*\\\\\n\\vin {{end}}\\\\\n"
+)
+unindented_line_template = Template(
+    "{% if flex %}{{flex}}~+\\\\\n{%endif%}{{start}}~\*\\\\\n{{end}}\\\\\n"
+)
+unindent_first_line_template = Template(
+    "{% if flex %}{{flex}}~+\\\\\n\\vin {%endif%}{{start}}~\*\\\\\n\\vin {{end}}\\\\\n"
+)
+
 
 parser = argparse.ArgumentParser()
 parser.add_argument("ANTIPHON", help="Antiphon file to parse")
@@ -17,6 +32,12 @@ parser.add_argument("PSALM_NAME", help="psalm name to output")
 parser.add_argument("--range", help="Range to print")
 parser.add_argument("-ng", "--no-gloria", help="Omit Gloria?", action="store_true")
 parser.add_argument("-nc", "--no-copy", action="store_true", help="Skip .gabc file")
+parser.add_argument(
+    "--indent-mode",
+    help="Indentation mode, one of 'alternate', 'hangline' or 'none'.",
+    default="alternate",
+)
+# parser.add_argument("--line-numbers", action="store_true", help="Show line numbers.")
 args = parser.parse_args()
 
 nos = [
@@ -66,22 +87,35 @@ else:
 
 outd = Path(".")
 
+verses = {}
 with inf.open() as f:
+    versetoggle = False
     for line in f:
-        no, vpart = line.split("}", 1)
-        no = int(no.lstrip("{").strip(".~"))
-        verses[no] = (
-            vpart.strip("\n")
-            .replace("~†", "~\\+\\\\\n \\vin")
-            .replace("~*", "~\\*\\\\\n \\vin")
-        )
-        last_verse = no
+        no = int(search(r"^{([0-9]+)", line).group(1))
+        line = sub(r"^{.+?} *", "", line)
+        match = search(r"(.+)~†(.+)~\* *(.+)\\\\$", line)
+        if match:
+            line = dict(flex=match.group(1), start=match.group(2), end=match.group(3))
+        else:
+            match = search(r"(.+)~\* *(.+)\\\\$", line)
+            line = dict(flex=None, start=match.group(1), end=match.group(2))
 
-if not args.range:
+        if args.indent_mode == "alternate":
+            if versetoggle:
+                verses[no] = indented_line_template.render(line)
+            else:
+                verses[no] = unindented_line_template.render(line)
+        elif args.indent_mode == "hangline":
+            verses[no] = unindent_first_line_template.render(line)
+        else:
+            verses[no] = unindented_line_template.render(line)
+        versetoggle = not versetoggle
+
+if args.range:
+    start, stop = (int(x) for x in args.RANGE.split("-"))
+else:
     start = min(verses.keys())
     stop = max(verses.keys()) - 2
-else:
-    start, stop = args.RANGE.split("-")
 
 try:
     logical_name = int(logical_name)
@@ -94,7 +128,7 @@ except ValueError:
 with (outd / "psalms.tex").open("a") as f:
     f.write(tex_name)
 
-    for i in range(int(start), int(stop) + 1):
+    for i in range(start, stop + 1):
         f.write(verses[i] + "\n")
 
     if not args.no_gloria:
