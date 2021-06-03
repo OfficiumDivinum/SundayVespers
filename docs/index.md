@@ -69,7 +69,8 @@ name and populate it with the correct files.
 ### Manually
 
 Copy `vespers-template/{{cookiecutter.project_slug}}` to a sensibly named
-directory.  Insert the feast name in `propers.tex`.
+directory. Insert the feast name in `propers.tex`. Edit anything else inside
+`{{}}` and remove any directives inside `{% %}`.
 
 ## Adding Content
 
