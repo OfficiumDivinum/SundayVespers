@@ -2,7 +2,6 @@
 """Basic parser for psalms as downloaded and converted to tex.
 Format is:
 {XX~} half verse * half verse
-continue half verse
 
 Last two verses are Gloria.
 """
@@ -69,23 +68,14 @@ outd = Path(".")
 
 with inf.open() as f:
     for line in f:
-        if line.startswith("{"):
-            no, vpart = line.split("}", 1)
-            no = int(no.lstrip("{").strip(".~"))
-            verses[no] = (
-                vpart.strip("\n")
-                .replace("~†", "~\\+\\\\\n \\vin")
-                .replace("~*", "~\\*\\\\\n \\vin")
-            )
-            last_verse = no
-        else:
-            verses[last_verse] = (
-                verses[last_verse]
-                + " "
-                + line.strip("\n")
-                .replace("~†", "~\\+\\\\\n \\vin")
-                .replace("~*", "~\\*\\\\\n \\vin")
-            )
+        no, vpart = line.split("}", 1)
+        no = int(no.lstrip("{").strip(".~"))
+        verses[no] = (
+            vpart.strip("\n")
+            .replace("~†", "~\\+\\\\\n \\vin")
+            .replace("~*", "~\\*\\\\\n \\vin")
+        )
+        last_verse = no
 
 if not args.range:
     start = min(verses.keys())
