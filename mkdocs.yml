@@ -1,4 +1,5 @@
 site_name: Sunday Vespers
+repo_url: https://github.com/St-Josephs-Gateshead/SundayVespers
 
 plugins:
   - search
