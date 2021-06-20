@@ -1,6 +1,7 @@
-{% raw %}
+
 \documentclass[a5paper,openany,10pt]{memoir}
 % Packages
+\usepackage[nobottomtitles]{titlesec}
 \usepackage{fontspec}
 \setmainfont{TeX Gyre Pagella} %palatino clone
 \usepackage[yyyymmdd,hhmmss]{datetime}
@@ -179,15 +180,13 @@
 \section{Incipit}
 \label{sec:incipit}
 Pater. Ave.
-{% endraw %}
 
-{% if "n" in cookiecutter.solemn_introit.lower() %}
+
+
 \gregorioscore{../../common/deusinadiutorium_simple}
-{% else %}
-\gregorioscore{../../common/deusinadiutorium_solemn}
-{% endif %}
 
-{% raw %}
+
+
 \section{Psalmi}
 \gregorioscore{ant1}
 \onecolumntranslation{\antonetranslation}
@@ -331,18 +330,16 @@ Pater.
   \+
 \end{center}
 
-{% endraw %}
-\vfill
-Typeset by {{ cookiecutter.creator_name }} in ten-point Palatino.  Translations from the
-Knox Bible and divinumofficium.com.
 
-{% raw %}
+\vfill
+Typeset by John Morris in ten-point Palatino.  Translations from the
+Knox Bible, divinumofficium.com and my own.
+
 The latest version of this booklet can always be found at
 \url{https://github.com/St-Josephs-Gateshead/SundayVespers}. Comments?
 Suggestion? Found a mistake? Open an issue in the repository.
 
-{\centering\footnotesize\texttt{Compositum \today\ hora \currenttime}}
-
+{\centering\footnotesize\texttt{Compositum \today\ hora \currenttime}\par}
 
 \end{document}
 
@@ -350,4 +347,4 @@ Suggestion? Found a mistake? Open an issue in the repository.
 %%% mode: latex
 %%% TeX-engine: lualatex-shell
 %%% End:
-{% endraw %}
+
