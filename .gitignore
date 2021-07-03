@@ -297,3 +297,4 @@ TSWLatexianTemp*
 *.glog
 *.pdf
 /site/
+*.pdf-view-restore
