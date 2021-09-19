@@ -298,3 +298,4 @@ TSWLatexianTemp*
 *.pdf
 /site/
 *.pdf-view-restore
+/node_modules/

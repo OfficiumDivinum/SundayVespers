@@ -30,14 +30,31 @@ jobs:
             sh .git-hook
             apk add make
             make -j (nproc)
+
       - name: make zip
         run: ./package.py
       - uses: actions/upload-artifact@v2
         with:
           name: Pdfs
           path: pdfs/*.pdf
-      - uses: eine/tip@master
+
+      # NB: At this point we have not yet run semantic-release, so we don't have a tag
+      # thus eine/tip will *never* create a release
+      # (which is now handled by semantic-release)
+
+      - name: Upload latest files to latest
+        uses: eine/tip@master
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           files: pdfs/*.pdf
           tag: latest
+
+      - uses: actions/setup-node@v2
+        with:
+          cache: 'yarn'
+      - run: yarn install
+      - name: Semantic Release
+        run: yarn semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
