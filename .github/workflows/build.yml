@@ -38,17 +38,6 @@ jobs:
           name: Pdfs
           path: pdfs/*.pdf
 
-      # NB: At this point we have not yet run semantic-release, so we don't have a tag
-      # thus eine/tip will *never* create a release
-      # (which is now handled by semantic-release)
-
-      - name: Upload latest files to latest
-        uses: eine/tip@master
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          files: pdfs/*.pdf
-          tag: latest
-
       - uses: actions/setup-node@v2
         with:
           cache: 'yarn'
