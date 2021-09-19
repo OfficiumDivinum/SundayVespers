@@ -29,7 +29,7 @@ jobs:
             apk add git
             sh .git-hook
             apk add make
-            make
+            make -j (nproc)
       - name: make zip
         run: ./package.py
       - uses: actions/upload-artifact@v2
