@@ -127,6 +127,7 @@ def main():
         args.PSALM_NAME = args.PSALM_NAME.title()
 
     if termination:
+        termination = termination.replace("*", "star")
         inf = Path(f"../../psalms/{args.PSALM_NAME}-{mode}{termination}.tex")
     else:
         inf = Path(f"../../psalms/{args.PSALM_NAME}-{mode}.tex")
