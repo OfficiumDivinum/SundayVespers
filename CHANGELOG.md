@@ -1,3 +1,10 @@
+# [0.2.0](https://github.com/St-Josephs-Gateshead/SundayVespers/compare/v0.1.2...v0.2.0) (2021-11-06)
+
+
+### Features
+
+* add xix after pentecost, fixing psalms ([910f2a1](https://github.com/St-Josephs-Gateshead/SundayVespers/commit/910f2a11ac7c5057cbaba10913f3cf6751596153))
+
 # [0.1.0](https://github.com/St-Josephs-Gateshead/SundayVespers/compare/v0.0.13...v0.1.0) (2021-09-19)
 
 
