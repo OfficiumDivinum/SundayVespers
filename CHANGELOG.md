@@ -1,3 +1,10 @@
+## [0.2.1](https://github.com/St-Josephs-Gateshead/SundayVespers/compare/v0.2.0...v0.2.1) (2021-11-14)
+
+
+### Bug Fixes
+
+* **adventII:** correct psalms ([87759c7](https://github.com/St-Josephs-Gateshead/SundayVespers/commit/87759c777480ddbec265b1cffa8056d93bd90d31))
+
 # [0.2.0](https://github.com/St-Josephs-Gateshead/SundayVespers/compare/v0.1.2...v0.2.0) (2021-11-06)
 
 
