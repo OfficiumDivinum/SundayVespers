@@ -1,0 +1,169 @@
+% This file defines the propert to be inserted into vespers.tex  In this way
+% multiple feasts can be typeset very quickly.  vespers.tex should not normally
+% need changing.  Note that this is not the most readable way to insert text
+% into a LaTeX document, but it is the most powerful: the macros defined here
+% are directly excecuted when building the document.
+
+% For the title page
+\newcommand{\feast}{S. Joseph Opificis}
+
+\newcommand{\lenten}{} % set to true in lent.
+
+% Translations of antiphons
+\newcommand{\antonetranslation}{God whose working fashioned the world, has
+  stationed man to work and till the earth, alleluia.}
+\newcommand{\anttwotranslation}{Christ, the Son of God, * deigned to work with his hands, alleluia.}
+
+% Define these if required.  They will be ignored if anttwotranslation is blank.
+\newcommand{\antthreetranslation}{The craftsman, * holy Joseph, faithfully exercising his trade, shines forth as a marvellous example of work, alleluia.}
+\newcommand{\antfourtranslation}{Faithful servant, * and prudent, whom the Lord hath appointed over his family, alleluia.}
+\newcommand{\antfivetranslation}{O Joseph, holy workman, * protect our work, alleluia.}
+
+
+% Text of psalms, formatted. This can be taken directly from the formatted
+% psalms provided. Alternatively you can use parsing script to generate a
+% psalms.tex and include it here. For more information, see the documentation.
+\input{psalms.tex}
+
+% \newcommand{\psalmOne}
+% \newcommand{\psalmTwo}
+% \newcommand{\psalmThree}
+% \newcommand{\psalmFour}
+% \newcommand{\psalmFive}
+% \newcommand{\magnificat}
+
+\newcommand{\translationOne}{
+  To the Master I serve the Lord’s promise was given, Sit here at my right hand while I make thy enemies a footstool under thy feet.
+  The Lord will make thy empire spring up like a branch out of Sion; thou art to bear rule in the midst of thy enemies.
+  From birth, princely state shall be thine, holy and glorious; thou art my son, born like dew before the day-star rises.
+  The Lord has sworn an oath there is no retracting, Thou art a priest for ever in the line of Melchisedech.
+  At thy right hand, the Lord will beat down kings in the day of his vengeance;
+  he will pass sentence on the nations, heap high the bodies, scatter far and wide the heads of the slain.
+  Let him but drink of the brook by the wayside, he will lift up his head in victory.
+}
+
+
+\newcommand{\translationTwo}{
+  \textbf{A}ll my heart goes out to the Lord in praise, \textbf{B}efore the assembly where the just are gathered.
+  \textbf{C}hant we the Lord’s wondrous doings, \textbf{d}elight and study of all who love him.
+  \textbf{E}ver his deeds are high and glorious, \textbf{f}aithful he abides to all eternity.
+  \textbf{G}reat deeds, that he keeps still in remembrance!
+  \textbf{H}e, the Lord, is kind and merciful. \textbf{I}n abundance he fed the men who feared him, \textbf{k}eeping his covenant for ever.
+  \textbf{L}ordly the power he shewed his people,
+  \textbf{m}aking the lands of the heathen their possession. \textbf{N}o act but shews him just and faithful; \textbf{o}f his decrees there is no relenting.
+  \textbf{P}erpetual time shall leave them changeless; \textbf{r}ight and truth are their foundation.
+  \textbf{S}o he has brought our race deliverance; \textbf{t}o all eternity stands his covenant. \textbf{U}nutterable is his name and worshipful;
+   \textbf{v}ain without his fear is learning. \textbf{W}ise evermore are you who follow it; \textbf{y}ours the prize that lasts for ever.
+}
+
+\newcommand{\translationThree}{
+  \textbf{A} blessed man is he, who fears the Lord, \textbf{b}earing great love to his commandments.
+  \textbf{C}hildren of his shall win renown in their country; \textbf{d}o right, and thy sons shall find a blessing.
+  \textbf{E}ase shall dwell in his house, and great prosperity; \textbf{f}ame shall ever record his bounty.
+  \textbf{G}ood men see a light dawn in darkness; \textbf{h}is light, who is merciful, kind and faithful.
+  \textbf{I}t goes well with the man who lends in pity, \textbf{j}ust and merciful in his dealings.
+  \textbf{L}ength of days shall leave him still unshaken; \textbf{m}en will remember the just for ever.
+  \textbf{N}o fear shall he have of evil tidings; \textbf{o}n the Lord his hope is fixed unchangeably.
+  \textbf{P}atient his heart remains and stedfast, \textbf{q}uietly he waits for the downfall of his enemies.
+  \textbf{R}ich are his alms to the needy; \textbf{s}till his bounty abides in memory. \textbf{T}he Lord will lift up his head in triumph;
+   \textbf{u}ngodly men are ill content to see it. \textbf{V}ainly they gnash their teeth in envy; \textbf{w}orldly hopes must fade and perish.
+
+}
+
+\newcommand{\translationFour}{
+  Praise the Lord, you that are his servants, praise the name of the Lord together.
+  Blessed be the Lord’s name at all times, from this day to all eternity;
+  from the sun’s rise to the sun’s setting let the Lord’s name be praised continually.
+  The Lord is sovereign king of all the nations; his glory is high above the heavens.
+  Who is like the Lord our God, so high above us,
+  that stoops to regard both heaven and earth,
+  lifting up the poor from the dust he lay in, raising the beggar out of his dung-hill,
+  to find him a place among the princes, the princes that rule over his people?
+  He gives the barren woman a home to dwell in, a mother rejoicing in her children.
+}
+
+\newcommand{\translationFive}{
+  Praise the Lord, all you Gentiles, let all the nations of the world do him honour.
+  Abundant has his mercy been towards us; the Lord remains faithful to his word for ever.
+}
+
+% The Chapter will be inserted directly in a multicol environment, so we just
+% provide the latin (\l{}) and english (\e{})
+\newcommand{\capitulum}{
+  \l{Fratres: Caritátem habéte, quod est vínculum perfectiónis, et pax Christi exsúltet in córdibus vestris, et grati estóte.}
+  \e{Brethren: have charity, which is the bond of perfection, and let the peace of Christ rejoice in your hearts, and be ye thankful.}
+}
+
+% Hymn
+\newcommand{\hymntranslation}{
+  Let angels chant thy praise, pure spouse of purest bride,\\
+  While Christendom's sweet choirs the gladsome strains repeat,\\
+  To tell thy wondrous fame, to raise the pealing hymn,\\
+  Wherewith we all thy glory greet.
+
+  When doubts and bitter fears thy heavy heart oppressed,\\
+  And filled thy righteous soul with sorrow and dismay,\\
+  An angel quickly came, the wondrous secret told,\\
+  And drove thy anxious griefs away.
+
+  Thy arms thy new-born Lord, with tender joy embrace;\\
+  Him then to Egypt's land thy watchful care doth bring;\\
+  Him in the temple's courts once lost thou dost regain,\\
+  And 'mid thy tears dost greet thy King.
+
+  Not till death's pangs are o'er do others gain their crown,\\
+  But, Joseph, unto thee the blessed lot was given\\
+  While life did yet endure, thy God to see and know,\\
+  As do the saints above in heaven.
+
+  Grant us, great Trinity, for Joseph's holy sake,\\
+  In highest bliss and love, above the stars to reign,\\
+  That we in joy with him may praise our loving God,\\
+  And sing our glad eternal strain.
+  Amen.
+}
+
+\newcommand{\versus}{
+  \l{\v~Ora pro nobis, sancte Ioseph, allelúia.}
+  \e{\v~Pray for us, holy Joseph, alleluia.}
+  \l{\r~Labórum nostrórum protéctor fidélis, allelúia.}
+  \e{\r~Faithful protector of our labours, alleluia.}
+}
+
+% Magnificat Antiphon
+\newcommand{\magnificatAntiphonTranslation}{And Jesus himself * was beginning about the age of thirty years; being (as it was supposed) the son of Joseph, alleluia.}
+
+% Collect
+\newcommand{\oratio}{
+  \l{Rerum cónditor Deus, qui legem labóris humáno géneri statuísti: concéde propítius; ut, sancti Ioseph exémplo et patrocínio, ópera perficiámus quae prǽcipis, et prǽmia consequámur quæ promíttis.}
+  \e{God, Creator of all things, who didst lay on the human race the law of labour: graciously grant; that by following the example of Saint Joseph and under his patronage, we may carry out the work thou dost command, and obtain the reward thou dost promise.}
+  \l{Per Dóminum nostrum Iesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.}
+  \e{Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.}
+  \amen
+}
+
+% Commemorations if any.  If empty this will be skipped.  It should contain *all
+% the text* of the commemorations, including responses.
+\newcommand{\com}{
+  \red{Commemoratio Dominica II Post Pascha}
+  \black{
+    \l{\ant Ego sum pastor bonus, qui pasco oves meas, et pro óvibus meis pono ánimam meam, allelúia.}
+    \e{I am the Good Shepherd, Who feed My sheep: and I lay down My life for My sheep. Alleluia.}
+    \l{\v~Mane nobíscum, Dómine, allelúia.}
+    \e{\v~Stay with us, O Lord, alleluia.}
+    \l{\r~Quóniam advesperáscit, allelúia.}
+    \e{\r~For the evening falls, alleluia.}
+    \oremus
+    \l{Deus, qui in Fílii tui humilitáte iacéntem mundum erexísti: fidélibus tuis perpétuam concéde lætítiam; ut, quos perpétuæ mortis eripuísti cásibus, gáudiis fácias pérfrui sempitérnis.}
+    \e{O God, Whose Son hath humbled Himself, and Who hast through Him raised up the whole world, grant to thy faithful people everlasting joy; and as Thou hast delivered them from the bitter pains of eternal death, make them to be glad for ever in thy presence.}
+    \l{Per Dóminum nostrum Iesum Christum, Fílium tuum: qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum.}
+    \e{Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the Holy Ghost, God, world without end.}
+    \amen
+  }
+}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "vespers"
+%%% End:

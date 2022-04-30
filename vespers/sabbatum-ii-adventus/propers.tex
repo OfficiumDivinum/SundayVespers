@@ -1,0 +1,148 @@
+% This file defines the propert to be inserted into vespers.tex  In this way
+% multiple feasts can be typeset very quickly.  vespers.tex should not normally
+% need changing.  Note that this is not the most readable way to insert text
+% into a LaTeX document, but it is the most powerful: the macros defined here
+% are directly excecuted when building the document.
+
+% For the title page
+\newcommand{\feast}{Dominica II Adventus}
+
+% Translations of antiphons
+\newcommand{\antonetranslation}{Behold, the Lord * cometh in the clouds of heaven with great power. Alleluia.}
+\newcommand{\anttwotranslation}{Our Zion is a strong city, * the Saviour will God appoint in her for walls and bulwarks; open ye the gates, for God is with us. Alleluia.}
+\newcommand{\antthreetranslation}{Behold, the Lord * shall appear and not lie though He tarry, wait for Him, because He will come and will not tarry. Alleluia.}
+\newcommand{\antfourtranslation}{The mountains and the hills * shall break forth before God into singing, and all the trees of the wood shall clap their hands for the Lord the Ruler cometh, and He shall reign for ever and ever. Alleluia, Alleluia.}
+\newcommand{\antfivetranslation}{Behold, our Lord * cometh with power, and He shall enlighten the eyes of His servants. Alleluia.}
+
+
+% Text of psalms, formatted. This can be taken directly from the formatted
+% psalms provided. Alternatively you can use parsing script to generate a
+% psalms.tex and include it here. For more information, see the documentation.
+\input{psalms.tex}
+
+\newcommand{\translationOne}{
+Blessed be the Lord, my refuge, who makes these hands strong for battle, these fingers skilled in fight;
+the Lord who pities me and grants me safety, who shelters me and sets me at liberty, who protects me and gives me confidence, bowing down nations to my will.
+Lord, what is Adam’s race, that thou givest heed to it, what is man, that thou carest for him?
+Like the wind he goes, like a shadow his days pass.
+Bid heaven stoop, Lord, and come down to earth; at thy touch, the mountains will be wreathed in smoke.
+Brandish thy lightnings, to rout my enemies; shoot thy arrows, and throw them into confusion!
+With heavenly aid, from yonder flood deliver me; rescue me from the power of alien foes,
+who make treacherous promises, and lift their hands in perjury.
+}
+
+
+\newcommand{\translationTwo}{
+  Then, O my God, I will sing thee a new song, on a ten-stringed harp I will sound thy praise;
+the God to whom kings must look for victory, the God who has brought his servant David rescue.
+Save me from the cruel sword, deliver me from the power of alien foes, who make treacherous promises, and lift their hands in perjury.
+So may our sons grow to manhood, tall as the saplings, our daughters shapely as some column at the turn of a building, it may be, the temple itself.
+Our garners full, well stored with every kind of plenty, our sheep bearing a thousand-fold, thronging the pasture in their tens of thousands,
+our oxen straining at the load; no ruined walls, no exile, no lamenting in our streets.
+Happy men call such a people as this; and is not the people happy, that has the Lord for its God?
+}
+
+\newcommand{\translationThree}{
+And shall I not extol thee, my God, my king; shall I not bless thy name for ever and for evermore?
+Blessing shall be thine, day after day; for ever and for evermore praised be thy name.
+Can any praise be worthy of the Lord’s majesty, any thought set limits to his greatness?
+Down the ages the story of thy deeds is told, thy power is ever acclaimed;
+each magnifies thy unapproachable glory, makes known thy wonders.
+Fearful are the tales they tell of thy power, proclaiming thy magnificence;
+grateful their memory of all thy goodness, as they boast of thy just dealings. 
+}
+
+\newcommand{\translationFour}{
+How gracious the Lord is, how merciful, how patient, how rich in pity!
+Is he not a loving Lord to his whole creation; does not his mercy reach out to all that he has made?
+ Joining, then, Lord, in thy whole creation’s praise, let thy faithful servants bless thee;
+ let them publish the glory of thy kingdom, and discourse of thy power,
+ making that power known to the race of men, the glory, the splendour of that kingdom!
+ No age shall dawn but shall see thee reigning still; generations pass, and thy rule shall endure. O how true the Lord is to all his promises, how gracious in all his dealings!
+}
+
+\newcommand{\translationFive}{
+Prostrate though men may fall, the Lord will lift them up, will revive their crushed spirits.
+Quietly, Lord, thy creatures raise their eyes to thee, and thou grantest them, in due time, their nourishment,
+Ready to open thy hand, and fill with thy blessing all that lives.
+So faithful the Lord is in all he does, so gracious in all his dealings.
+The Lord draws near to every man that calls upon him, will he but call upon him with a true heart.
+Utter but the wish, you that fear the Lord, and he will grant it, will hear the cry, and bring aid.
+Vigilantly the Lord watches over all that love him, marks down the wicked for destruction.
+While these lips tell of the Lord’s praise, let all that lives bless his holy name, for ever, and for evermore.
+}
+
+% The Chapter will be inserted directly in a multicol environment, so we just
+% provide the latin (\l{}) and english (\e{})
+\newcommand{\capitulum}{
+  \l{Fratres: Quæcúmque scripta sunt, ad nostram doctrínam scripta sunt: ut per patiéntiam, et consolatiónem Scripturárum spem habeámus.}
+  \e{Brethren: Everything which was written, was written for our instruction:
+    that through patience and the comfort of the scriptures we might have hope.}
+}
+
+% Hymn
+\newcommand{\hymntranslation}{
+  Bright builder of the heavenly poles,
+  Eternal light of faithful souls,
+  Jesus, Redeemer of mankind,
+  Our humble prayers vouchsafe to mind.
+
+  Who, lest the fraud of hell’s black king
+  Should all men to destruction bring,
+  Didst, by an act of generous love,
+  The fainting world’s physician prove.
+
+  Who, that thou mightst our ransom pay
+  And wash the stains of sin away,
+  Wouldst from a Virgin’s womb proceed
+  And on the cross a victim bleed.
+
+  Whose glorious power, whose saving name
+  No sooner any voice can frame,
+  But heaven and earth and hell agree
+  To honour them with trembling knee.
+
+  Thee, Christ, who at the latter day
+  Shalt be our Judge, we humbly pray
+  Such arms of heavenly grace to send
+  As may thy Church from foes defend.
+
+  Be glory given and honour done
+  To God the Father and the Son
+  And to the Holy Ghost on high,
+  From age to age eternally.
+  Amen.
+  }
+
+\newcommand{\versus}{
+  \l{\v~Roráte, cæli, désuper, et nubes pluant iustum.}
+  \e{\v~Drop down dew, ye heavens, from above, and let the clouds rain the Just.}
+  \l{\r~Aperiátur terra, et gérminet Salvatórem.}
+  \e{\r~Let the earth be opened, and bud forth the Saviour.}
+}
+
+% Magnificat Antiphon
+\newcommand{\magnificatAntiphonTranslation}{The master saith: Gather ye together first the tares, * and bind them in bundles to burn them; but gather the wheat into my barn.}
+
+% Collect
+\newcommand{\oratio}{
+  \l{Excita, Dómine, corda nostra ad præparándas Unigéniti tui vias: ut, per eius advéntum, purificátis tibi méntibus servíre mereámur:}
+  \e{Stir up our hearts, O Lord, to make ready the ways of thine Only-begotten Son, that by His coming our minds being purified, we may the more worthily give up ourselves to thy service:}
+  \l{Per Dóminum nostrum Iesum Christum, Fílium tuum: qui tecum vivit
+    et regnat in unitáte Spíritus Sancti Deus, per ómnia sǽcula
+    sæculórum.}
+  \e{Through Jesus Christ, thy Son our Lord, Who liveth
+    and reigneth with thee, in the unity of the Holy Ghost, ever one
+    God, world without end.}
+  \amen
+}
+
+% Commemorations if any.  If empty this will be skipped.  It should contain *all
+% the text* of the commemorations, including responses.
+\newcommand{\com}{}             %no commemoratio
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "vespers"
+%%% End:
