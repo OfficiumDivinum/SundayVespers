@@ -1,0 +1,178 @@
+% This file defines the propert to be inserted into vespers.tex  In this way
+% multiple feasts can be typeset very quickly.  vespers.tex should not normally
+% need changing.  Note that this is not the most readable way to insert text
+% into a LaTeX document, but it is the most powerful: the macros defined here
+% are directly excecuted when building the document.
+
+% For the title page
+\newcommand{\feast}{Dominica XXII Post Epiphaniam}
+
+% Translations of antiphons
+\newcommand{\antonetranslation}{The Lord said unto my Lord: sit at my right hand.} 
+\newcommand{\anttwotranslation}{Great are the works of the Lord, excellent in all his intentions.} % set to blank to use ant1 throughout
+
+% Define these if required.  They will be ignored if anttwotranslation is blank.
+\newcommand{\antthreetranslation}{He who feareth the Lord delighteth exceedingly in his commandments.}
+\newcommand{\antfourtranslation}{Blessed be the name of the Lord unto the ages of ages.}
+\newcommand{\antfivetranslation}{For our God is in heaven, and doth whatsoever he pleaseth.}
+
+
+% Text of psalms, formatted. This can be taken directly from the formatted
+% psalms provided. Alternatively you can use parsing script to generate a
+% psalms.tex and include it here. For more information, see the documentation.
+\input{psalms.tex}
+
+% \newcommand{\psalmOne}
+% \newcommand{\psalmTwo}
+% \newcommand{\psalmThree}
+% \newcommand{\psalmFour}
+% \newcommand{\psalmFive}
+% \newcommand{\magnificat}
+
+\newcommand{\translationOne}{
+  To the Master I serve the Lord’s promise was given, Sit here at my right hand while I make thy enemies a footstool under thy feet.
+  The Lord will make thy empire spring up like a branch out of Sion; thou art to bear rule in the midst of thy enemies.
+  From birth, princely state shall be thine, holy and glorious; thou art my son, born like dew before the day-star rises.
+  The Lord has sworn an oath there is no retracting, Thou art a priest for ever in the line of Melchisedech.
+  At thy right hand, the Lord will beat down kings in the day of his vengeance;
+  he will pass sentence on the nations, heap high the bodies, scatter far and wide the heads of the slain.
+  Let him but drink of the brook by the wayside, he will lift up his head in victory.
+}
+
+
+\newcommand{\translationTwo}{
+  \textbf{A}ll my heart goes out to the Lord in praise, \textbf{B}efore the assembly where the just are gathered.
+  \textbf{C}hant we the Lord’s wondrous doings, \textbf{d}elight and study of all who love him.
+  \textbf{E}ver his deeds are high and glorious, \textbf{f}aithful he abides to all eternity.
+  \textbf{G}reat deeds, that he keeps still in remembrance!
+  \textbf{H}e, the Lord, is kind and merciful. \textbf{I}n abundance he fed the men who feared him, \textbf{k}eeping his covenant for ever.
+  \textbf{L}ordly the power he shewed his people,
+  \textbf{m}aking the lands of the heathen their possession. \textbf{N}o act but shews him just and faithful; \textbf{o}f his decrees there is no relenting.
+  \textbf{P}erpetual time shall leave them changeless; \textbf{r}ight and truth are their foundation.
+  \textbf{S}o he has brought our race deliverance; \textbf{t}o all eternity stands his covenant. \textbf{U}nutterable is his name and worshipful;
+   \textbf{v}ain without his fear is learning. \textbf{W}ise evermore are you who follow it; \textbf{y}ours the prize that lasts for ever.
+}
+
+\newcommand{\translationThree}{
+  \textbf{A} blessed man is he, who fears the Lord, \textbf{b}earing great love to his commandments.
+  \textbf{C}hildren of his shall win renown in their country; \textbf{d}o right, and thy sons shall find a blessing.
+  \textbf{E}ase shall dwell in his house, and great prosperity; \textbf{f}ame shall ever record his bounty.
+  \textbf{G}ood men see a light dawn in darkness; \textbf{h}is light, who is merciful, kind and faithful.
+  \textbf{I}t goes well with the man who lends in pity, \textbf{j}ust and merciful in his dealings.
+  \textbf{L}ength of days shall leave him still unshaken; \textbf{m}en will remember the just for ever.
+  \textbf{N}o fear shall he have of evil tidings; \textbf{o}n the Lord his hope is fixed unchangeably.
+  \textbf{P}atient his heart remains and stedfast, \textbf{q}uietly he waits for the downfall of his enemies.
+  \textbf{R}ich are his alms to the needy; \textbf{s}till his bounty abides in memory. \textbf{T}he Lord will lift up his head in triumph;
+   \textbf{u}ngodly men are ill content to see it. \textbf{V}ainly they gnash their teeth in envy; \textbf{w}orldly hopes must fade and perish.
+
+}
+
+\newcommand{\translationFour}{
+  Praise the Lord, you that are his servants, praise the name of the Lord together.
+  Blessed be the Lord’s name at all times, from this day to all eternity;
+  from the sun’s rise to the sun’s setting let the Lord’s name be praised continually.
+  The Lord is sovereign king of all the nations; his glory is high above the heavens.
+  Who is like the Lord our God, so high above us,
+  that stoops to regard both heaven and earth,
+  lifting up the poor from the dust he lay in, raising the beggar out of his dung-hill,
+  to find him a place among the princes, the princes that rule over his people?
+  He gives the barren woman a home to dwell in, a mother rejoicing in her children.
+}
+
+\newcommand{\translationFive}{
+When Israel came out of Egypt, and the sons of Jacob heard no more a strange language,
+the Lord took Juda for his sanctuary, Israel for his own dominion.
+The seas fled at the sight they witnessed, backward flowed the stream of Jordan;
+up leapt, like rams, the startled mountains, up leapt the hills, like yearling sheep.
+What ailed you, seas, that you fled in terror, Jordan’s stream, what drove thee back?
+Why did you leap up like rams, you mountains, leap up, you hills, like yearling sheep?
+Let earth thrill at its Master’s presence; it is he that comes, the God of Jacob,
+who turned the rock into pools of water, the flint-stone into a springing well.
+Not to us, Lord, not to us the glory; let thy name alone be honoured;
+ thine the merciful, thine the faithful; why must the heathen say, Their God deserts them?
+ Our God is a God that dwells in heaven; all that his will designs, he executes.
+ The heathen have silver idols and golden, gods which the hands of men have fashioned.
+ They have mouths, and yet are silent; eyes they have, and yet are sightless;
+ ears they have, and want all hearing; noses, and yet no smell can reach them;
+ hands unfeeling, feet unstirring; never a sound their throats may utter.
+ Such be the end of all who make them, such the reward of all who trust them.
+ It is the Lord that gives hope to the race of Israel, their only help, their only stronghold;
+ the Lord that gives hope to the race of Aaron, their only help, their only stronghold;
+ the Lord that gives hope to all who fear him, their only help, their only stronghold.
+ The Lord keeps us in mind, and grants us blessing, blesses the race of Israel, blesses the race of Aaron;
+ all those who fear the Lord, small and great alike, he blesses.
+ Still may the Lord grant you increase, you and your children after you;
+ the blessing of the Lord be upon you. It is he that made both heaven and earth;
+ to the Lord belongs the heaven of heavens, the earth he gives to the children of men.
+ From the dead, Lord, thou hast no praises, the men who go down into the place of silence;
+ but we bless the Lord, we, the living, from this day to all eternity.
+}
+
+% The Chapter will be inserted directly in a multicol environment, so we just
+% provide the latin (\l{}) and english (\e{})
+\newcommand{\capitulum}{
+  \l{Benedíctus Deus, et Pater Dómini nostri Iesu Christi, Pater misericordiárum, et Deus totíus consolatiónis, qui consolátur nos in omni tribulatióne nostra.}
+  \e{Blessed be the God and Father of our Lord Jesus Christ, the Father of mercies, and the God of all comfort, who comforteth us in all our tribulation.}
+}
+
+% Hymn
+\newcommand{\hymntranslation}{
+  O blest Creator of the light,\\
+  Who mak’st the day with radiance bright,\\
+  And o’er the forming world didst call\\
+  The light from chaos first of all;
+
+  Whose wisdom joined in meet array\\
+  The morn and eve, and named them day:\\
+  Night comes with all its darkling fears;\\
+  Regard thy people’s prayers and tears.
+
+  Lest, sunk in sin, and whelmed with strife,\\
+  They lose the gift of endless life;\\
+  While thinking but the thoughts of time,\\
+  They weave new chains of woe and crime.
+
+  But grant them grace that they may strain\\
+  The heavenly gate and prize to gain:\\
+  Each harmful lure aside to cast,\\
+  And purge away each error past.
+
+  O Father, that we ask be done,\\
+  Through Jesus Christ, thine only Son;\\
+  Who, with the Holy Ghost and thee,\\
+  Doth live and reign eternally.
+  Amen.
+}
+
+\newcommand{\versus}{
+  \l{\v~Dirigátur, Dómine, orátio mea.}
+  \e{\v~Take up, O Lord, my prayer.}
+  \l{\r~Sicut incénsum in conspéctu tuo.}
+  \e{\r~As incense in thy sight.}
+}
+
+% Magnificat Antiphon
+\newcommand{\magnificatAntiphonTranslation}{Render therefore unto Caesar the things which are Caesar's, * and unto God the things that are God's, alleluia.}
+
+% Collect
+\newcommand{\oratio}{
+  \l{Deus, refúgium nostrum et virtus: adésto piis Ecclésiæ tuæ précibus, auctor ipse pietátis, et præsta; ut, quod fidéliter pétimus, efficáciter consequámur.}
+  \e{O God, our Refuge and Strength, Who art the author of all godliness, be ready, we beseech thee, to hear the devout prayers of thy Church, and grant that those things which we ask faithfully, we may obtain effectually.}
+  \l{Per Dóminum nostrum Iesum Christum, Fílium tuum: qui tecum vivit
+    et regnat in unitáte Spíritus Sancti Deus, per ómnia sǽcula
+    sæculórum.}
+  \e{Through Jesus Christ, thy Son our Lord, Who liveth
+    and reigneth with thee, in the unity of the Holy Ghost, ever one
+    God, world without end.}
+  \amen
+}
+
+% Commemorations if any.  If empty this will be skipped.  It should contain *all
+% the text* of the commemorations, including responses.
+\newcommand{\com}{}             %no commemoratio
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "vespers"
+%%% End:

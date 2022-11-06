@@ -1,0 +1,66 @@
+% package to provide common typesetting for liturgy
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{rubrics}
+\RequirePackage[autocompile]{gregoriotex}
+\RequirePackage{suffix}         %for starred commands
+
+% extra symbols
+\renewcommand{\*}{\GreStar}
+\newcommand{\+}{\GreDagger}
+\renewcommand{\r}{\gothRbar}
+\renewcommand{\v}{\gothVbar}
+\newcommand{\X}{\grecross}
+
+% lengths
+\newlength{\psalmskip}          %skip after ‘psalm’ 
+\setlength{\psalmskip}{\baselineskip}
+\newlength{\psalmquoteskip}     %skip after ‘psalmquote’
+\setlength{\psalmquoteskip}{\baselineskip}
+\newlength{\readingskip}        %skip after ‘reading’
+\setlength{\readingskip}{\baselineskip}
+
+
+% headings etc
+
+\newcommand*\psalm[2]{         %typeset the Psalm Name on the right
+  \needspace{2\baselineskip}
+  \noindent#1\hfill\emph{#2}\par
+  % {\par\centering\emph{#2}\\
+  %  #1\par}
+  % \vspace{\psalmskip}  
+}
+% \WithSuffix\newcommand*\psalm*[1]{    %typeset the Psalm with summary on LHS
+% \vspace{\psalmskip}
+% \hfill\emph{#1}\par
+% }
+
+\newcommand{\reading}[2]{       %typeset anything l-r in subsubsection
+\subsubsection{#1\hfill\normalfont\emph{#2}}
+}
+
+\newcommand*{\psalmquote}[2]{    %typeset the quote before a psalm or
+                                %canticle
+%\noindent\emph{#1}\hfill\emph{#2}\par
+%\noindent\emph{#1} (#2)\par
+%\vspace{\psalmquoteskip}
+
+}
+
+\newcommand\ant[1][]{%
+  \ifstrempty{#1}{   %just ‘ant’
+    \noindent\emph{Ant. }
+  }{
+    \noindent\emph{Ant. #1:}
+    % some other thing with #1 and #2
+  }%
+}
+
+
+% rubrics
+\newcommand{\red}[1]{ %do the red....
+  \noindent#1
+}
+\newcommand*{\vel}{
+  \emph{vel:}\par
+  \vspace{\baselineskip}
+}
